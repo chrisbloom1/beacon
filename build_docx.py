@@ -395,22 +395,22 @@ def main():
     pBdr2.append(b2)
     pPr2.append(pBdr2)
 
-    # 2-col table: map (~4.55in) + dark sidebar (~2.75in)
+    # 2-col table: map (~5.25in, ~71%) + dark sidebar (~2.1in, ~29%)
     fac_tbl = pcell.add_table(rows=1, cols=2)
     fac_tbl.autofit = False
-    fac_tbl.columns[0].width = Inches(4.55)
-    fac_tbl.columns[1].width = Inches(2.75)
+    fac_tbl.columns[0].width = Inches(5.25)
+    fac_tbl.columns[1].width = Inches(2.05)
     remove_table_borders(fac_tbl)
 
     map_cell = fac_tbl.cell(0, 0)
-    map_cell.width = Inches(4.55)
+    map_cell.width = Inches(5.25)
     set_cell_margins(map_cell, top=0, bottom=0, left=0, right=160)
     map_cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
     mp_par = map_cell.paragraphs[0]
     tighten(mp_par)
     try:
         mp_par.add_run().add_picture("assets/beacon-location-map.png",
-                                      width=Inches(4.4))
+                                      width=Inches(5.1))
     except Exception:
         add_run(mp_par,
                 "Detroit · Corktown · 23rd Street Manufacturing Campus",
@@ -418,7 +418,7 @@ def main():
 
     # Sidebar (dark teal w/ yellow accent)
     side = fac_tbl.cell(0, 1)
-    side.width = Inches(2.75)
+    side.width = Inches(2.05)
     set_cell_bg(side, TEAL)
     set_cell_margins(side, top=200, bottom=200, left=220, right=220)
     set_cell_border(side,
