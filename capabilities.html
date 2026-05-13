@@ -27,17 +27,19 @@
   .masthead {
     background: #022429;
     color: #fdf6e4;
-    padding: 0.4in 0.5in 0.32in;
+    padding: 0.32in 0.5in 0.26in;
     display: flex;
     align-items: center;
     gap: 22px;
     border-bottom: 8px solid #fdb602;
   }
   .masthead .logo {
-    height: 0.65in;
+    width: 2.1in;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
   }
-  .masthead .logo img { height: 100%; width: auto; display: block; }
+  .masthead .logo img { width: 100%; height: auto; display: block; }
   .masthead-mid {
     flex: 1;
     padding-left: 18px;
@@ -97,7 +99,7 @@
   /* ===== PAPER BODY ===== */
   .paper {
     flex: 1;
-    padding: 22px 0.5in 0;
+    padding: 16px 0.5in 0;
     display: flex;
     flex-direction: column;
   }
@@ -106,7 +108,7 @@
   .lede { max-width: 7.4in; }
   .h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.3px;
@@ -115,9 +117,9 @@
   }
   .h1 .hl { background: #fdb602; padding: 0 7px; }
   .lede p {
-    margin-top: 10px;
-    font-size: 11px;
-    line-height: 1.55;
+    margin-top: 8px;
+    font-size: 10.5px;
+    line-height: 1.5;
     color: #022429;
     max-width: 6.9in;
   }
@@ -133,8 +135,8 @@
     display: flex;
     align-items: baseline;
     gap: 12px;
-    margin: 18px 0 8px;
-    padding-bottom: 4px;
+    margin: 13px 0 6px;
+    padding-bottom: 3px;
     border-bottom: 2px solid #022429;
   }
   .section-title .bar {
@@ -164,7 +166,7 @@
   .card {
     flex: 1;
     background: #ffffff;
-    padding: 14px 14px 14px;
+    padding: 11px 13px 11px;
     border-top: 4px solid #fdb602;
     position: relative;
   }
@@ -225,7 +227,7 @@
     margin-top: 4px;
     background: #022429;
     color: #fdf6e4;
-    padding: 16px 18px;
+    padding: 12px 18px;
     display: flex;
     gap: 22px;
     align-items: stretch;
@@ -279,12 +281,69 @@
   }
   .strip-body ul li b { font-weight: 800; }
 
+  /* ===== LOCATION MAP ===== */
+  .locale {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .locale .head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #022429;
+    margin-bottom: 6px;
+  }
+  .locale .head .bar {
+    display: inline-block;
+    width: 22px;
+    height: 10px;
+    background: #fdb602;
+    transform: translateY(1px);
+  }
+  .locale .head .kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #022429;
+    text-transform: uppercase;
+  }
+  .locale .head .sub {
+    font-size: 9.5px;
+    color: #022429;
+    opacity: 0.7;
+    font-style: italic;
+    flex: 1;
+  }
+  .locale .head .stat {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #022429;
+    background: #fdb602;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .locale .map {
+    width: 100%;
+    background: #fdf6e4;
+    overflow: hidden;
+  }
+  .locale .map img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   /* ===== CTA ===== */
   .cta {
     margin-top: auto;
     background: #fdb602;
     color: #022429;
-    padding: 18px 0.5in 18px 0.5in;
+    padding: 13px 0.5in 13px 0.5in;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -353,7 +412,7 @@
   <header class="masthead">
     <div class="logo">
       <!-- Real Beacon logo lockup: BEACON / MANUFACTURING on yellow -->
-      <img alt="Beacon Manufacturing" src="assets/beacon-logo-yellow.png">
+      <img alt="Beacon Manufacturing" src="assets/beacon-logo-cream.png">
     </div>
     <div class="masthead-mid">
       <div class="eyebrow">Capabilities Statement</div>
@@ -375,7 +434,7 @@
         <span class="strong">Beacon is a builder-led contract manufacturer in Detroit</span>
         delivering metal fabrication, assembly, and rapid prototyping. From
         one-off prototypes to repeatable short runs and full production.
-        <span class="bring">Bring us a problem.</span>
+        <span class="bring">Bring us your manufacturing challenges.</span>
       </p>
     </section>
 
@@ -392,7 +451,7 @@
         <h3>Fabrication</h3>
         <div class="tagline">Cutting, forming, and welding for metal parts and structures.</div>
         <ul>
-          <li><b>Laser cutting</b> — tube + flat</li>
+          <li><b>Laser cutting</b> tube + flat</li>
           <li><b>Forming</b> — brake press, tube bending, punch &amp; press</li>
           <li><b>Welding</b> — MIG / TIG / laser + robotic</li>
           <li><b>Short runs</b> — jigs &amp; fixtures for repeatability</li>
@@ -438,9 +497,23 @@
       <div class="strip-body">
         <ul>
           <li><b>Receiving, inventory, and part management</b></li>
-          <li><b>Parcel + freight</b> — including no-box, roll-on / roll-off</li>
+          <li><b>Parcel + freight</b> including no-box, roll-on / roll-off</li>
           <li><b>Flexible storage</b> on the floor</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="locale">
+      <div class="head">
+        <span class="bar"></span>
+        <span class="kicker">Location</span>
+        <span class="sub">23rd Street Manufacturing Campus · Corktown, Detroit</span>
+        <span class="stat">0.68 mi to Michigan Central · 1 mi to Canada</span>
+      </div>
+      <div class="map">
+        <img alt="Detroit Corktown map showing Beacon's 23rd Street Manufacturing Campus, Michigan Central, and Newlab"
+             src="assets/beacon-location-map.png">
       </div>
     </section>
 

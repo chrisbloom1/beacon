@@ -153,8 +153,8 @@ def main():
     lp = logo_cell.paragraphs[0]
     tighten(lp)
     try:
-        lp.add_run().add_picture("assets/beacon-logo-yellow.png",
-                                  width=Inches(1.7))
+        lp.add_run().add_picture("assets/beacon-logo-cream.png",
+                                  width=Inches(1.85))
     except Exception:
         # Fallback: yellow chip with "BEACON"
         chip_tbl = logo_cell.add_table(rows=1, cols=1)
@@ -276,8 +276,8 @@ def main():
     add_run(lp, "delivering metal fabrication, assembly, and rapid prototyping. "
                 "From one-off prototypes to repeatable short runs and full "
                 "production. ", size=10.5, color=TEAL)
-    add_run(lp, "  Bring us a problem.  ", size=10.5, bold=True, color=TEAL,
-            shade=YELLOW)
+    add_run(lp, "  Bring us your manufacturing challenges.  ",
+            size=10.5, bold=True, color=TEAL, shade=YELLOW)
 
     # spacer inside paper cell
     pad1 = pcell.add_paragraph()
@@ -316,7 +316,7 @@ def main():
     cards_data = [
         ("01 · FAB", "FABRICATION",
          "Cutting, forming, and welding for metal parts and structures.",
-         [("Laser cutting", " — tube + flat"),
+         [("Laser cutting", " tube + flat"),
           ("Forming", " — brake press, tube bending, punch & press"),
           ("Welding", " — MIG / TIG / laser + robotic"),
           ("Short runs", " — jigs & fixtures for repeatability")]),
@@ -428,7 +428,7 @@ def main():
 
     bullets = [
         ("Receiving, inventory, and part management", ""),
-        ("Parcel + freight", " — including no-box, roll-on / roll-off"),
+        ("Parcel + freight", " including no-box, roll-on / roll-off"),
         ("Flexible storage", " on the floor"),
     ]
     first = True
@@ -444,6 +444,45 @@ def main():
         add_run(ip, bold_part, size=10, bold=True, color=CREAM)
         if rest:
             add_run(ip, rest, size=10, color=CREAM)
+
+    # ============= LOCATION MAP =============
+    # Title for location section (lives inside the paper inset)
+    sp_loc = pcell.add_paragraph()
+    tighten(sp_loc, before=8, after=2)
+
+    title_loc = pcell.add_paragraph()
+    tighten(title_loc, before=2, after=2)
+    add_run(title_loc, "▮▮ ", size=14, bold=True, color=YELLOW, font=BODY)
+    add_run(title_loc, "LOCATION   ", size=15, bold=True, color=TEAL,
+            font=DISPLAY, letter_spacing=70)
+    add_run(title_loc, "23rd Street Manufacturing Campus · Corktown, Detroit   ",
+            size=9, italic=True, color=TEAL)
+    add_run(title_loc, "  0.68 MI TO MICHIGAN CENTRAL · 1 MI TO CANADA  ",
+            size=8, bold=True, color=TEAL, font=DISPLAY, letter_spacing=30,
+            shade=YELLOW)
+
+    rule_loc = pcell.add_paragraph()
+    tighten(rule_loc, after=4)
+    pPr3 = rule_loc._element.get_or_add_pPr()
+    pBdr3 = OxmlElement("w:pBdr")
+    b3 = OxmlElement("w:bottom")
+    b3.set(qn("w:val"), "single")
+    b3.set(qn("w:sz"), "12")
+    b3.set(qn("w:space"), "1")
+    b3.set(qn("w:color"), TEAL)
+    pBdr3.append(b3)
+    pPr3.append(pBdr3)
+
+    # Map image — full-width inside the paper inset
+    map_p = pcell.add_paragraph()
+    tighten(map_p, after=4)
+    try:
+        map_p.add_run().add_picture("assets/beacon-location-map.png",
+                                     width=Inches(7.3))
+    except Exception:
+        add_run(map_p,
+                "Detroit · Corktown · 23rd Street Manufacturing Campus",
+                size=10, italic=True, color=TEAL)
 
     # ============= CTA (after paper inset) =============
     # Black-bordered yellow CTA, full-width

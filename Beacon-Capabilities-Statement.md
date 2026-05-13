@@ -7,7 +7,8 @@
 
 Beacon is a builder-led contract manufacturer in Detroit delivering metal
 fabrication, assembly, and rapid prototyping. From one-off prototypes to
-repeatable short runs and full production. Bring us a problem.
+repeatable short runs and full production. Bring us your manufacturing
+challenges.
 
 ---
 
@@ -17,7 +18,7 @@ repeatable short runs and full production. Bring us a problem.
 ### Fabrication
 *Cutting, forming, and welding for metal parts and structures.*
 
-- **Laser cutting** - tube + flat
+- **Laser cutting** tube + flat
 - **Forming** - brake press, tube bending, punch & press
 - **Welding** - MIG / TIG / laser + robotic
 - **Short runs** - jigs & fixtures for repeatability
@@ -43,8 +44,19 @@ repeatable short runs and full production. Bring us a problem.
 *Products in, products out - without the chaos.*
 
 - Receiving, inventory, and part management
-- Parcel + freight; no-box roll-on / roll-off
+- Parcel + freight including no-box, roll-on / roll-off
 - Flexible storage
+
+---
+
+### Location
+*23rd Street Manufacturing Campus · Corktown, Detroit*
+
+- **0.68 mi** to Michigan Central
+- **1 mi** to Canada
+- Adjacent to Michigan Ave and Newlab
+
+![Detroit Corktown map showing Beacon's 23rd Street Manufacturing Campus, Michigan Central, and Newlab](assets/beacon-location-map.png)
 
 ---
 
