@@ -445,21 +445,18 @@ def main():
         if rest:
             add_run(ip, rest, size=10, color=CREAM)
 
-    # ============= LOCATION MAP =============
-    # Title for location section (lives inside the paper inset)
+    # ============= LOCATION =============
     sp_loc = pcell.add_paragraph()
-    tighten(sp_loc, before=8, after=2)
+    tighten(sp_loc, before=6, after=2)
 
     title_loc = pcell.add_paragraph()
     tighten(title_loc, before=2, after=2)
     add_run(title_loc, "▮▮ ", size=14, bold=True, color=YELLOW, font=BODY)
     add_run(title_loc, "LOCATION   ", size=15, bold=True, color=TEAL,
             font=DISPLAY, letter_spacing=70)
-    add_run(title_loc, "23rd Street Manufacturing Campus · Corktown, Detroit   ",
+    add_run(title_loc,
+            "Corktown, Detroit · steps from Michigan Central & Newlab",
             size=9, italic=True, color=TEAL)
-    add_run(title_loc, "  0.68 MI TO MICHIGAN CENTRAL · 1 MI TO CANADA  ",
-            size=8, bold=True, color=TEAL, font=DISPLAY, letter_spacing=30,
-            shade=YELLOW)
 
     rule_loc = pcell.add_paragraph()
     tighten(rule_loc, after=4)
@@ -473,16 +470,71 @@ def main():
     pBdr3.append(b3)
     pPr3.append(pBdr3)
 
-    # Map image — full-width inside the paper inset
-    map_p = pcell.add_paragraph()
-    tighten(map_p, after=4)
+    # 2-col table: map (2/3 ~ 4.85in) + dark sidebar (1/3 ~ 2.45in)
+    loc_tbl = pcell.add_table(rows=1, cols=2)
+    loc_tbl.autofit = False
+    loc_tbl.columns[0].width = Inches(4.85)
+    loc_tbl.columns[1].width = Inches(2.45)
+    remove_table_borders(loc_tbl)
+
+    map_cell = loc_tbl.cell(0, 0)
+    map_cell.width = Inches(4.85)
+    set_cell_margins(map_cell, top=0, bottom=0, left=0, right=120)
+    map_cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+    mp_par = map_cell.paragraphs[0]
+    tighten(mp_par)
     try:
-        map_p.add_run().add_picture("assets/beacon-location-map.png",
-                                     width=Inches(7.3))
+        mp_par.add_run().add_picture("assets/beacon-location-map.png",
+                                      width=Inches(4.75))
     except Exception:
-        add_run(map_p,
+        add_run(mp_par,
                 "Detroit · Corktown · 23rd Street Manufacturing Campus",
                 size=10, italic=True, color=TEAL)
+
+    # Sidebar (dark teal w/ yellow accent)
+    side = loc_tbl.cell(0, 1)
+    side.width = Inches(2.45)
+    set_cell_bg(side, TEAL)
+    set_cell_margins(side, top=180, bottom=180, left=200, right=200)
+    set_cell_border(side,
+        left={"val": "single", "sz": 36, "color": YELLOW},
+        top={"val": "nil"}, bottom={"val": "nil"}, right={"val": "nil"})
+
+    sp1 = side.paragraphs[0]
+    tighten(sp1)
+    add_run(sp1, "SPACES TO SCALE", size=10, bold=True, color=YELLOW,
+            font=DISPLAY, letter_spacing=60)
+    sp2 = side.add_paragraph()
+    tighten(sp2, before=2)
+    add_run(sp2, "2 CAMPUSES", size=16, bold=True, color=CREAM, font=DISPLAY)
+    sp3 = side.add_paragraph()
+    tighten(sp3)
+    add_run(sp3, "200,000+ SF", size=16, bold=True, color=CREAM, font=DISPLAY)
+
+    sp_chip = side.add_paragraph()
+    tighten(sp_chip, before=4)
+    add_run(sp_chip, "  1,000 – 20,000 SF BAYS  ", size=8, bold=True,
+            color=TEAL, font=DISPLAY, letter_spacing=30, shade=YELLOW)
+
+    sp_body = side.add_paragraph()
+    tighten(sp_body, before=6, line=1.4)
+    add_run(sp_body,
+            "Both sites sit inside Detroit's ", size=8.5, color=CREAM)
+    add_run(sp_body,
+            "Corktown Aerial Mobility & Transportation Innovation Zone",
+            size=8.5, bold=True, color=YELLOW)
+    add_run(sp_body,
+            " — close to pilots, partners, and test corridors.",
+            size=8.5, color=CREAM)
+
+    sp_tag = side.add_paragraph()
+    tighten(sp_tag, before=6, line=1.2)
+    add_run(sp_tag, "DRONES · ROBOTICS · MOBILITY", size=9, bold=True,
+            color=SAND, font=DISPLAY, letter_spacing=40)
+    sp_tag2 = side.add_paragraph()
+    tighten(sp_tag2, line=1.2)
+    add_run(sp_tag2, "MANUFACTURE · SCALE · TEST · DEPLOY",
+            size=9, bold=True, color=SAND, font=DISPLAY, letter_spacing=40)
 
     # ============= CTA (after paper inset) =============
     # Black-bordered yellow CTA, full-width

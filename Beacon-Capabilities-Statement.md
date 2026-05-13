@@ -50,11 +50,12 @@ challenges.
 ---
 
 ### Location
-*23rd Street Manufacturing Campus · Corktown, Detroit*
+*Corktown, Detroit · steps from Michigan Central & Newlab*
 
-- **0.68 mi** to Michigan Central
-- **1 mi** to Canada
-- Adjacent to Michigan Ave and Newlab
+**Spaces to scale — 2 campuses · 200,000+ SF.** Bays from **1,000 to
+20,000 SF**. Both sites sit inside Detroit's **Corktown Aerial Mobility &
+Transportation Innovation Zone** — close to pilots, partners, and test
+corridors. Drones · Robotics · Mobility. Manufacture, scale, test, deploy.
 
 ![Detroit Corktown map showing Beacon's 23rd Street Manufacturing Campus, Michigan Central, and Newlab](assets/beacon-location-map.png)
 

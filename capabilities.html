@@ -27,14 +27,14 @@
   .masthead {
     background: #022429;
     color: #fdf6e4;
-    padding: 0.32in 0.5in 0.26in;
+    padding: 0.26in 0.5in 0.22in;
     display: flex;
     align-items: center;
     gap: 22px;
-    border-bottom: 8px solid #fdb602;
+    border-bottom: 6px solid #fdb602;
   }
   .masthead .logo {
-    width: 2.1in;
+    width: 1.85in;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -281,61 +281,85 @@
   }
   .strip-body ul li b { font-weight: 800; }
 
-  /* ===== LOCATION MAP ===== */
+  /* ===== LOCATION ===== */
   .locale {
-    margin-top: 12px;
+    margin-top: 10px;
     display: flex;
-    flex-direction: column;
-  }
-  .locale .head {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid #022429;
-    margin-bottom: 6px;
-  }
-  .locale .head .bar {
-    display: inline-block;
-    width: 22px;
-    height: 10px;
-    background: #fdb602;
-    transform: translateY(1px);
-  }
-  .locale .head .kicker {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 17px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #022429;
-    text-transform: uppercase;
-  }
-  .locale .head .sub {
-    font-size: 9.5px;
-    color: #022429;
-    opacity: 0.7;
-    font-style: italic;
-    flex: 1;
-  }
-  .locale .head .stat {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: #022429;
-    background: #fdb602;
-    padding: 2px 7px;
-    text-transform: uppercase;
+    gap: 14px;
+    align-items: stretch;
   }
   .locale .map {
-    width: 100%;
+    flex: 2;
     background: #fdf6e4;
     overflow: hidden;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
   }
   .locale .map img {
     width: 100%;
     height: auto;
     display: block;
+  }
+  .locale .copy {
+    flex: 1;
+    background: #022429;
+    color: #fdf6e4;
+    padding: 11px 13px 12px;
+    border-left: 5px solid #fdb602;
+    display: flex;
+    flex-direction: column;
+  }
+  .locale .copy .kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #fdb602;
+    text-transform: uppercase;
+  }
+  .locale .copy h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fdf6e4;
+    margin-top: 3px;
+  }
+  .locale .copy .stats {
+    margin-top: 6px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .locale .copy .stat {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #022429;
+    background: #fdb602;
+    padding: 2px 6px;
+    text-transform: uppercase;
+  }
+  .locale .copy p {
+    margin-top: 7px;
+    font-size: 8.5px;
+    line-height: 1.45;
+    color: #fdf6e4;
+  }
+  .locale .copy p b { font-weight: 800; color: #fdb602; }
+  .locale .copy p.tag {
+    margin-top: auto;
+    padding-top: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #c9b789;
+    text-transform: uppercase;
+    line-height: 1.2;
   }
 
   /* ===== CTA ===== */
@@ -504,16 +528,29 @@
     </section>
 
     <!-- LOCATION -->
+    <div class="section-title">
+      <span class="bar"></span>
+      <span class="kicker">Location</span>
+      <span class="sub">Corktown, Detroit · steps from Michigan Central &amp; Newlab</span>
+    </div>
+
     <section class="locale">
-      <div class="head">
-        <span class="bar"></span>
-        <span class="kicker">Location</span>
-        <span class="sub">23rd Street Manufacturing Campus · Corktown, Detroit</span>
-        <span class="stat">0.68 mi to Michigan Central · 1 mi to Canada</span>
-      </div>
       <div class="map">
         <img alt="Detroit Corktown map showing Beacon's 23rd Street Manufacturing Campus, Michigan Central, and Newlab"
              src="assets/beacon-location-map.png">
+      </div>
+      <div class="copy">
+        <div class="kicker">Spaces to scale</div>
+        <h3>2 campuses<br>200,000+ SF</h3>
+        <div class="stats">
+          <span class="stat">1,000 – 20,000 SF bays</span>
+        </div>
+        <p>
+          Both sites sit inside Detroit's <b>Corktown Aerial Mobility &amp;
+          Transportation Innovation Zone</b> — close to pilots, partners, and
+          test corridors.
+        </p>
+        <p class="tag">Drones · Robotics · Mobility<br>Manufacture · scale · test · deploy</p>
       </div>
     </section>
 
