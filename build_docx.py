@@ -138,38 +138,44 @@ def main():
     # ============= MASTHEAD =============
     head = doc.add_table(rows=1, cols=3)
     head.autofit = False
-    head.columns[0].width = Inches(1.85)
-    head.columns[1].width = Inches(3.65)
-    head.columns[2].width = Inches(3.0)
+    head.columns[0].width = Inches(2.4)
+    head.columns[1].width = Inches(3.3)
+    head.columns[2].width = Inches(2.8)
     remove_table_borders(head)
 
-    # Wordmark cell — yellow box with BEACON
-    wm = head.cell(0, 0)
-    wm.width = Inches(1.85)
-    set_cell_bg(wm, TEAL)
-    set_cell_margins(wm, top=180, bottom=180, left=420, right=120)
-    wm.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+    # Logo cell — real BEACON/MANUFACTURING lockup on yellow background
+    logo_cell = head.cell(0, 0)
+    logo_cell.width = Inches(2.4)
+    set_cell_bg(logo_cell, TEAL)
+    set_cell_margins(logo_cell, top=200, bottom=200, left=420, right=200)
+    logo_cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
 
-    # Nested table to make a yellow chip inside teal masthead
-    chip_tbl = wm.add_table(rows=1, cols=1)
-    chip_tbl.autofit = False
-    chip_tbl.columns[0].width = Inches(1.3)
-    remove_table_borders(chip_tbl)
-    chip = chip_tbl.cell(0, 0)
-    chip.width = Inches(1.3)
-    set_cell_bg(chip, YELLOW)
-    set_cell_margins(chip, top=140, bottom=100, left=160, right=160)
-    cp = chip.paragraphs[0]
-    cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    tighten(cp)
-    add_run(cp, "BEACON", size=30, bold=True, color=TEAL, font=DISPLAY,
-            letter_spacing=20)
+    lp = logo_cell.paragraphs[0]
+    tighten(lp)
+    try:
+        lp.add_run().add_picture("assets/beacon-logo-yellow.png",
+                                  width=Inches(1.7))
+    except Exception:
+        # Fallback: yellow chip with "BEACON"
+        chip_tbl = logo_cell.add_table(rows=1, cols=1)
+        chip_tbl.autofit = False
+        chip_tbl.columns[0].width = Inches(1.3)
+        remove_table_borders(chip_tbl)
+        chip = chip_tbl.cell(0, 0)
+        chip.width = Inches(1.3)
+        set_cell_bg(chip, YELLOW)
+        set_cell_margins(chip, top=140, bottom=100, left=160, right=160)
+        cp = chip.paragraphs[0]
+        cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        tighten(cp)
+        add_run(cp, "BEACON", size=30, bold=True, color=TEAL, font=DISPLAY,
+                letter_spacing=20)
 
-    # Middle: eyebrow + doc title + sub
+    # Middle: eyebrow + doc title (NO address)
     mid = head.cell(0, 1)
-    mid.width = Inches(3.65)
+    mid.width = Inches(3.3)
     set_cell_bg(mid, TEAL)
-    set_cell_margins(mid, top=240, bottom=180, left=240, right=120)
+    set_cell_margins(mid, top=240, bottom=180, left=280, right=120)
     mid.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
 
     mp0 = mid.paragraphs[0]
@@ -178,34 +184,34 @@ def main():
             font=DISPLAY, letter_spacing=80)
     mp1 = mid.add_paragraph()
     tighten(mp1, before=2)
-    add_run(mp1, "BEACON MANUFACTURING", size=20, bold=True, color=CREAM,
+    add_run(mp1, "BUILDER-LED MFG.", size=18, bold=True, color=CREAM,
             font=DISPLAY)
-    mp2 = mid.add_paragraph()
-    tighten(mp2, before=3)
-    add_run(mp2, "BUILDER-LED MFG. IN DETROIT · V2", size=8, bold=True,
-            color=SAND, font=BODY, letter_spacing=50)
+    mp1b = mid.add_paragraph()
+    tighten(mp1b)
+    add_run(mp1b, "MADE IN DETROIT.", size=18, bold=True, color=CREAM,
+            font=DISPLAY)
 
-    # Right: address block on teal
+    # Right: URL + ethos (NO address)
     rt = head.cell(0, 2)
-    rt.width = Inches(3.0)
+    rt.width = Inches(2.8)
     set_cell_bg(rt, TEAL)
-    set_cell_margins(rt, top=240, bottom=180, left=120, right=320)
+    set_cell_margins(rt, top=240, bottom=180, left=120, right=420)
     rt.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
 
-    for line in ["2050 15th St", "Detroit, MI 48216"]:
-        p = rt.add_paragraph() if line != "2050 15th St" else rt.paragraphs[0]
-        p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-        tighten(p)
-        add_run(p, line, size=9.5, color=CREAM, font=BODY)
-    url_p = rt.add_paragraph()
+    url_p = rt.paragraphs[0]
     url_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    tighten(url_p, before=2)
-    add_run(url_p, "BEACONMFG.US", size=14, bold=True, color=YELLOW,
+    tighten(url_p)
+    add_run(url_p, "BEACONMFG.US", size=16, bold=True, color=YELLOW,
             font=DISPLAY, letter_spacing=30)
     tag_p = rt.add_paragraph()
     tag_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    tighten(tag_p, before=2)
+    tighten(tag_p, before=4)
     add_run(tag_p, "LOCAL MFG. · 100% ONSHORE", size=8, bold=True,
+            color=SAND, font=BODY, letter_spacing=40)
+    tag_p2 = rt.add_paragraph()
+    tag_p2.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    tighten(tag_p2)
+    add_run(tag_p2, "AMERICAN INDUSTRY", size=8, bold=True,
             color=SAND, font=BODY, letter_spacing=40)
 
     # Yellow accent strip below masthead (single-row table)
@@ -267,8 +273,8 @@ def main():
     tighten(lp, before=4, line=1.45)
     add_run(lp, "Beacon is a builder-led contract manufacturer in Detroit ",
             size=10.5, bold=True, color=TEAL)
-    add_run(lp, "delivering metal fabrication, assembly, and rapid prototyping "
-                "— from one-off prototypes to repeatable short runs and full "
+    add_run(lp, "delivering metal fabrication, assembly, and rapid prototyping. "
+                "From one-off prototypes to repeatable short runs and full "
                 "production. ", size=10.5, color=TEAL)
     add_run(lp, "  Bring us a problem.  ", size=10.5, bold=True, color=TEAL,
             shade=YELLOW)
@@ -417,7 +423,8 @@ def main():
     add_run(slp2, "END TO END.", size=18, bold=True, color=CREAM, font=DISPLAY)
     slp3 = sl.add_paragraph()
     tighten(slp3, before=4)
-    add_run(slp3, "Detroit · 2050 15th St", size=8, italic=True, color=SAND)
+    add_run(slp3, "Receiving · inventory · outbound.", size=8,
+            italic=True, color=SAND)
 
     bullets = [
         ("Receiving, inventory, and part management", ""),
@@ -507,7 +514,7 @@ def main():
     s2 = stamp.cell(0, 2).paragraphs[0]
     tighten(s2)
     s2.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    add_run(s2, "CAPABILITIES STATEMENT · V2", size=7.5, bold=True,
+    add_run(s2, "CAPABILITIES STATEMENT", size=7.5, bold=True,
             color=SAND, font=BODY, letter_spacing=40)
 
     doc.save("Beacon-Capabilities-Statement.docx")

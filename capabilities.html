@@ -27,34 +27,21 @@
   .masthead {
     background: #022429;
     color: #fdf6e4;
-    padding: 0.42in 0.5in 0.32in;
-    display: flex;
-    align-items: stretch;
-    gap: 18px;
-    border-bottom: 8px solid #fdb602;
-  }
-  .wordmark {
-    background: #fdb602;
-    color: #022429;
-    padding: 10px 14px 8px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 0.95;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    padding: 0.4in 0.5in 0.32in;
     display: flex;
     align-items: center;
-    align-self: flex-start;
+    gap: 22px;
+    border-bottom: 8px solid #fdb602;
   }
+  .masthead .logo {
+    height: 0.65in;
+    flex-shrink: 0;
+  }
+  .masthead .logo img { height: 100%; width: auto; display: block; }
   .masthead-mid {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 4px;
+    padding-left: 18px;
     border-left: 2px solid rgba(253,182,2,0.35);
-    padding-left: 14px;
   }
   .masthead-mid .eyebrow {
     font-family: 'Barlow Condensed', sans-serif;
@@ -86,13 +73,13 @@
   .masthead-right {
     text-align: right;
     font-family: 'Figtree', sans-serif;
-    font-size: 9.5px;
+    font-size: 9px;
     line-height: 1.5;
     color: #fdf6e4;
   }
   .masthead-right .url {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 800;
     letter-spacing: 1px;
     color: #fdb602;
@@ -104,49 +91,40 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #c9b789;
+    font-weight: 600;
   }
 
   /* ===== PAPER BODY ===== */
   .paper {
     flex: 1;
-    padding: 18px 0.5in 0;
+    padding: 22px 0.5in 0;
     display: flex;
     flex-direction: column;
   }
 
   /* ===== LEDE ===== */
-  .lede-row {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-  }
-  .lede-mark {
-    width: 0.78in;
-    flex-shrink: 0;
-    padding-top: 4px;
-  }
-  .lede-mark img { width: 100%; height: auto; display: block; }
-  .lede-body { flex: 1; }
+  .lede { max-width: 7.4in; }
   .h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 800;
     line-height: 1;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.3px;
     text-transform: uppercase;
     color: #022429;
   }
-  .h1 .hl { background: #fdb602; padding: 0 6px; }
-  .lede-body p {
-    margin-top: 9px;
-    font-size: 10.5px;
+  .h1 .hl { background: #fdb602; padding: 0 7px; }
+  .lede p {
+    margin-top: 10px;
+    font-size: 11px;
     line-height: 1.55;
     color: #022429;
+    max-width: 6.9in;
   }
-  .lede-body p .strong { font-weight: 800; }
-  .lede-body p .bring {
+  .lede p .strong { font-weight: 800; }
+  .lede p .bring {
     background: #fdb602;
-    padding: 1px 6px;
+    padding: 1px 7px;
     font-weight: 800;
   }
 
@@ -155,7 +133,7 @@
     display: flex;
     align-items: baseline;
     gap: 12px;
-    margin: 16px 0 8px;
+    margin: 18px 0 8px;
     padding-bottom: 4px;
     border-bottom: 2px solid #022429;
   }
@@ -168,14 +146,14 @@
   }
   .section-title .kicker {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 800;
     letter-spacing: 3px;
     color: #022429;
     text-transform: uppercase;
   }
   .section-title .sub {
-    font-size: 9px;
+    font-size: 9.5px;
     color: #022429;
     opacity: 0.7;
     font-style: italic;
@@ -186,7 +164,7 @@
   .card {
     flex: 1;
     background: #ffffff;
-    padding: 12px 14px 14px;
+    padding: 14px 14px 14px;
     border-top: 4px solid #fdb602;
     position: relative;
   }
@@ -205,7 +183,7 @@
   }
   .card h3 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 800;
     line-height: 1;
     text-transform: uppercase;
@@ -215,21 +193,21 @@
   }
   .card .tagline {
     font-family: 'Figtree', sans-serif;
-    font-size: 9px;
+    font-size: 9.5px;
     font-style: italic;
     color: #022429;
     opacity: 0.75;
-    margin: 5px 0 9px;
+    margin: 6px 0 10px;
     line-height: 1.4;
   }
   .card ul { list-style: none; padding: 0; }
   .card ul li {
-    font-size: 9.5px;
+    font-size: 10px;
     line-height: 1.55;
-    padding-left: 12px;
+    padding-left: 13px;
     position: relative;
     color: #022429;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   .card ul li::before {
     content: "";
@@ -247,9 +225,9 @@
     margin-top: 4px;
     background: #022429;
     color: #fdf6e4;
-    padding: 14px 16px;
+    padding: 16px 18px;
     display: flex;
-    gap: 18px;
+    gap: 22px;
     align-items: stretch;
     position: relative;
   }
@@ -260,18 +238,18 @@
     width: 8px;
     background: #fdb602;
   }
-  .strip-head { min-width: 1.95in; padding-left: 4px; }
+  .strip-head { min-width: 2.0in; padding-left: 6px; }
   .strip-head h3 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 800;
     text-transform: uppercase;
     line-height: 1;
     color: #fdf6e4;
   }
   .strip-head .sub {
-    margin-top: 4px;
-    font-size: 8.5px;
+    margin-top: 6px;
+    font-size: 9px;
     color: #c9b789;
     line-height: 1.45;
     font-style: italic;
@@ -279,24 +257,24 @@
   .strip-body {
     flex: 1;
     border-left: 2px solid rgba(253,182,2,0.25);
-    padding-left: 16px;
+    padding-left: 18px;
   }
   .strip-body ul { list-style: none; padding: 0; }
   .strip-body ul li {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.5;
-    padding-left: 14px;
+    padding-left: 16px;
     position: relative;
     color: #fdf6e4;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
   .strip-body ul li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 6px;
-    width: 6px;
-    height: 6px;
+    top: 7px;
+    width: 7px;
+    height: 7px;
     background: #fdb602;
   }
   .strip-body ul li b { font-weight: 800; }
@@ -306,7 +284,7 @@
     margin-top: auto;
     background: #fdb602;
     color: #022429;
-    padding: 16px 0.5in 16px 0.5in;
+    padding: 18px 0.5in 18px 0.5in;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -323,8 +301,8 @@
   }
   .cta .left .line {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 1.12;
     margin-top: 4px;
     color: #022429;
@@ -338,7 +316,7 @@
   }
   .cta .right .url {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -346,10 +324,10 @@
     display: block;
   }
   .cta .right .addr {
-    margin-top: 2px;
+    margin-top: 3px;
     font-family: 'Figtree', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 10.5px;
+    font-weight: 700;
     color: #022429;
   }
 
@@ -357,7 +335,7 @@
   .stamp {
     background: #022429;
     color: #c9b789;
-    padding: 6px 0.5in;
+    padding: 7px 0.5in;
     display: flex;
     justify-content: space-between;
     font-family: 'Figtree', sans-serif;
@@ -373,17 +351,17 @@
 
   <!-- ============ MASTHEAD ============ -->
   <header class="masthead">
-    <div class="wordmark">BEACON</div>
+    <div class="logo">
+      <!-- Real Beacon logo lockup: BEACON / MANUFACTURING on yellow -->
+      <img alt="Beacon Manufacturing" src="assets/beacon-logo-yellow.png">
+    </div>
     <div class="masthead-mid">
       <div class="eyebrow">Capabilities Statement</div>
-      <div class="doc-title">Beacon Manufacturing</div>
-      <div class="doc-sub">Builder-led mfg. in Detroit · v2</div>
+      <div class="doc-title">Builder-led mfg.<br>made in Detroit.</div>
     </div>
     <div class="masthead-right">
-      2050 15th St<br>
-      Detroit, MI 48216<br>
       <span class="url">beaconmfg.us</span>
-      <div class="tag">Local Mfg. · 100% Onshore</div>
+      <div class="tag">Local Mfg. · 100% Onshore<br>American Industry</div>
     </div>
   </header>
 
@@ -391,21 +369,14 @@
   <main class="paper">
 
     <!-- LEDE -->
-    <section class="lede-row">
-      <div class="lede-mark">
-        <!-- Actual Beacon mark, embedded as PNG so it travels with the file -->
-        <img alt="Beacon mark"
-             src="assets/beacon-mark.png">
-      </div>
-      <div class="lede-body">
-        <div class="h1">Metal fabrication, assembly, and <span class="hl">rapid prototyping.</span></div>
-        <p>
-          <span class="strong">Beacon is a builder-led contract manufacturer in Detroit</span>
-          delivering metal fabrication, assembly, and rapid prototyping — from one-off
-          prototypes to repeatable short runs and full production.
-          <span class="bring">Bring us a problem.</span>
-        </p>
-      </div>
+    <section class="lede">
+      <div class="h1">Metal fabrication, assembly, &amp; <span class="hl">rapid prototyping.</span></div>
+      <p>
+        <span class="strong">Beacon is a builder-led contract manufacturer in Detroit</span>
+        delivering metal fabrication, assembly, and rapid prototyping. From
+        one-off prototypes to repeatable short runs and full production.
+        <span class="bring">Bring us a problem.</span>
+      </p>
     </section>
 
     <!-- CORE CAPABILITIES -->
@@ -435,7 +406,7 @@
         <ul>
           <li>Kitting + sub-assembly + final assembly</li>
           <li>Complete build-ups with CAD / 3xD support</li>
-          <li>Torque &amp; fastener standards · EOL test</li>
+          <li>Torque &amp; fastener standards; EOL test</li>
           <li>Quality checks + rework when needed</li>
         </ul>
       </div>
@@ -462,7 +433,7 @@
     <section class="strip">
       <div class="strip-head">
         <h3>One roof.<br>End to end.</h3>
-        <div class="sub">Detroit · 2050 15th St</div>
+        <div class="sub">Receiving · inventory · outbound.</div>
       </div>
       <div class="strip-body">
         <ul>
@@ -493,7 +464,7 @@
   <div class="stamp">
     <span>Beacon © 2026</span>
     <span class="yellow">Local Mfg. · 100% Onshore American Industry</span>
-    <span>Capabilities Statement · v2</span>
+    <span>Capabilities Statement</span>
   </div>
 
 </body>
