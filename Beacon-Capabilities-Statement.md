@@ -19,12 +19,12 @@ challenges.
 *Cutting, forming, and welding for metal parts and structures.*
 
 - **Laser cutting** tube + flat
-- **Forming** - brake press, tube bending, punch & press
-- **Welding** - MIG / TIG / laser + robotic
-- **Short runs** - jigs & fixtures for repeatability
+- **Forming** brake press, tube bending, punch & press
+- **Welding** MIG / TIG / laser + robotic
+- **Short runs** jigs & fixtures for repeatability
 
 ### Assembly
-*Kitting, sub-assembly, full builds - and everything in between.*
+*Kitting, sub-assembly, full builds, and everything in between.*
 
 - Kitting + sub-assembly + final assembly
 - Complete build-ups with CAD / 3xD support
@@ -34,7 +34,7 @@ challenges.
 ### Prototyping & DigiFab
 *Fast prototypes and fixtures, CAD to part.*
 
-- **3D printing** - FDM, SLA, SLS (EOS)
+- **3D printing** FDM, SLA, SLS (EOS)
 - Quick jigs, check-fixtures, POCs, mockups
 - Same-week iteration on form, fit, function
 
@@ -45,9 +45,9 @@ challenges.
 Central & Newlab*
 
 **One roof. End to end.** Spread across **2 campuses and 200,000+ SF**,
-Beacon offers plenty of space to scale — from **1,000 to 20,000 SF bays**.
+Beacon offers plenty of space to scale, from **1,000 to 20,000 SF bays**.
 Both sites sit inside Detroit's **Corktown Aerial Mobility & Transportation
-Innovation Zone** — close to pilots, partners, and test corridors for
+Innovation Zone**, close to pilots, partners, and test corridors for
 drones, robotics, and mobility.
 
 **Warehousing & Logistics**

@@ -143,7 +143,7 @@ def main():
     head.columns[2].width = Inches(2.8)
     remove_table_borders(head)
 
-    # Logo cell — real BEACON/MANUFACTURING lockup on yellow background
+    # Logo cell: real BEACON/MANUFACTURING lockup on yellow background
     logo_cell = head.cell(0, 0)
     logo_cell.width = Inches(2.4)
     set_cell_bg(logo_cell, TEAL)
@@ -317,18 +317,18 @@ def main():
         ("01 · FAB", "FABRICATION",
          "Cutting, forming, and welding for metal parts and structures.",
          [("Laser cutting", " tube + flat"),
-          ("Forming", " — brake press, tube bending, punch & press"),
-          ("Welding", " — MIG / TIG / laser + robotic"),
-          ("Short runs", " — jigs & fixtures for repeatability")]),
+          ("Forming", " brake press, tube bending, punch & press"),
+          ("Welding", " MIG / TIG / laser + robotic"),
+          ("Short runs", " jigs & fixtures for repeatability")]),
         ("02 · ASM", "ASSEMBLY",
-         "Kitting, sub-assembly, full builds — and everything in between.",
+         "Kitting, sub-assembly, full builds, and everything in between.",
          [(None, "Kitting + sub-assembly + final assembly"),
           (None, "Complete build-ups with CAD / 3xD support"),
           (None, "Torque & fastener standards · EOL test"),
           (None, "Quality checks + rework when needed")]),
         ("03 · PROTO", "PROTOTYPING & DIGIFAB",
          "Fast prototypes and fixtures, CAD to part.",
-         [("3D printing", " — FDM, SLA, SLS (EOS)"),
+         [("3D printing", " FDM, SLA, SLS (EOS)"),
           (None, "Quick jigs, check-fixtures, POCs, mockups"),
           (None, "Same-week iteration on form, fit, function")]),
     ]
@@ -457,25 +457,12 @@ def main():
             "Corktown Aerial Mobility & Transportation Innovation Zone",
             size=8.5, bold=True, color=YELLOW)
     add_run(sp_body,
-            " — close to pilots, partners, and test corridors for drones, "
+            ", close to pilots, partners, and test corridors for drones, "
             "robotics, and mobility.",
             size=8.5, color=CREAM)
 
-    # Divider line (achieved via paragraph with bottom border)
-    sp_div = side.add_paragraph()
-    tighten(sp_div, before=8, after=5)
-    pPr_div = sp_div._element.get_or_add_pPr()
-    pBdr_div = OxmlElement("w:pBdr")
-    b_div = OxmlElement("w:bottom")
-    b_div.set(qn("w:val"), "single")
-    b_div.set(qn("w:sz"), "4")
-    b_div.set(qn("w:space"), "1")
-    b_div.set(qn("w:color"), YELLOW)
-    pBdr_div.append(b_div)
-    pPr_div.append(pBdr_div)
-
     sp_wh = side.add_paragraph()
-    tighten(sp_wh)
+    tighten(sp_wh, before=10)
     add_run(sp_wh, "WAREHOUSING & LOGISTICS", size=9, bold=True,
             color=YELLOW, font=DISPLAY, letter_spacing=50)
 
