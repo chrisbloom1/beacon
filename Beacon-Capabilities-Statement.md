@@ -1,68 +1,59 @@
-# Beacon Manufacturing — Capabilities Statement
+# Beacon Manufacturing
+## Capabilities Statement · v2
 
-**Detroit, Michigan**
-2200 Beaufait Avenue
-Detroit, MI 48207
-hello@beaconmfg.com · (313) 555-0184
-beaconmfg.com
+**2050 15th St · Detroit, MI 48216**
+**beaconmfg.us** · Local Mfg. · 100% Onshore American Industry
 
 ---
 
-## Metal fabrication, assembly, and prototyping — made in Detroit.
+## Builder-led contract manufacturing — made in Detroit.
 
-Beacon Manufacturing is a Detroit-based contract manufacturer pairing decades
-of skilled-trade craftsmanship with modern digital fabrication. From one-off
-prototypes to recurring production runs, we cut, form, weld, finish, assemble,
-kit, and ship — all under one roof. Short lead times, tight tolerances, and a
-single point of accountability for engineers, founders, and procurement teams.
+Beacon is a builder-led contract manufacturer in Detroit delivering metal
+fabrication, assembly, and rapid prototyping — from one-off prototypes to
+repeatable short runs and full production. **Bring us a problem.** We'll
+quote it, prototype it, and put it on a line.
 
 ---
 
 ## Core Capabilities
+*Fabrication · Assembly · Prototyping*
 
-### Fabrication
+### 01 · Fabrication
+*Cutting, forming, and welding for metal parts and structures.*
 
-Precision sheet-metal and structural metalwork from raw stock to finished part.
+- **Laser cutting** — tube + flat
+- **Forming** — brake press, tube bending, punch & press
+- **Welding** — MIG / TIG / laser + robotic
+- **Short runs** — jigs & fixtures for repeatability
 
-- Fiber laser cutting (up to 1/2")
-- CNC press brake forming
-- MIG / TIG / spot welding
-- Powder coat & wet paint
-- Grinding, deburring, polishing
+### 02 · Assembly
+*Kitting, sub-assembly, full builds — and everything in between.*
 
-### Assembly
+- Kitting + sub-assembly + final assembly
+- Complete build-ups with CAD / 3xD support
+- Torque & fastener standards · EOL test
+- Quality checks + rework when needed
 
-Sub-assembly and finished-goods build with mechanical, electrical, and
-pneumatic integration.
+### 03 · Prototyping & DigiFab
+*Fast prototypes and fixtures, CAD to part.*
 
-- Mechanical & fastener assembly
-- Electrical harness & panel build
-- Pneumatic / hydraulic integration
-- Functional test & QA
-- Kitting & final packaging
-
-### Prototyping & DigiFab
-
-Rapid iteration with digital fabrication for fast turns on form, fit, and
-function.
-
-- 3D printing (FDM, SLA, SLS)
-- CNC routing & milling
-- Laser engraving & cutting
-- DFM review & design support
-- Low-volume pilot runs
+- **3D printing** — FDM, SLA, SLS (EOS)
+- Quick jigs, check-fixtures, POCs, mockups
+- Same-week iteration on form, fit, function
+- Design-for-manufacture review & support
 
 ---
 
 ## Warehousing & Logistics
+*Products in, products out — without the chaos.*
 
-**One roof, end to end.** 42,000 sq ft Detroit facility.
+**One roof. End to end.** Receiving · inventory · outbound.
 
-On-site warehousing, inventory programs, and outbound logistics keep your
-supply chain tight. We hold stock, manage Kanban replenishment, and ship
-direct to your line, your customer, or your DC.
+Receiving, inventory, and part management with flexible storage on the
+floor. Parcel and freight outbound — including no-box, roll-on / roll-off
+for awkward builds. We keep your supply tight so the line never starves.
 
-`Pick & Pack` · `Kitting` · `Kanban` · `VMI` · `Inventory Mgmt` · `LTL / Parcel` · `Drop Ship` · `Cross-Dock`
+`Receiving` · `Inventory` · `Part Mgmt` · `Flexible Storage` · `Parcel` · `Freight` · `Roll-on / Roll-off`
 
 ---
 
@@ -70,18 +61,20 @@ direct to your line, your customer, or your DC.
 
 | | |
 |---|---|
-| **Industries** | Automotive · Mobility · Industrial OEM · Consumer hardware · Architectural · Defense |
-| **Certifications** | ISO 9001:2015 · AWS D1.1 welders · ITAR registered · Detroit-based small business |
-| **NAICS** | 332710 · 332312 · 332999 · 333249 · 488991 |
+| **Made For** | Hardware founders · Industrial OEMs · Mobility · Architectural · Defense & gov · Consumer goods |
+| **How We Work** | Send a print, a CAD file, or a napkin sketch. We quote, prototype, and put it on a line. |
+| **Ethos** | Local Mfg. · 100% Onshore American Industry · Builder-led · Detroit |
 
 ---
 
-## Let's build it.
+## Have a part, kit, or assembly in mind?
 
-**Send a print. Get a quote in 48 hours.**
+**Send a print. We'll put it on a line.**
 
-quotes@beaconmfg.com · (313) 555-0184 · beaconmfg.com
+**beaconmfg.us** · 2050 15th St · Detroit, MI 48216
 
 ---
 
-*Brand colors: yellow `#F5B82E`, cream paper `#FCF6E6`, navy ink `#1B2738`.*
+*Beacon © 2026 — Local Mfg. · 100% Onshore American Industry · Capabilities Statement · v2*
+
+*Brand colors: yellow `#fdb602`, cream paper `#fdf6e4`, deep teal ink `#022429`, sand `#c9b789`, green `#155425`. Display: Barlow Condensed. Body: Figtree.*

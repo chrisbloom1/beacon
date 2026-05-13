@@ -4,259 +4,336 @@
 <meta charset="UTF-8">
 <title>Beacon Manufacturing — Capabilities Statement</title>
 <style>
-  @page {
-    size: letter;
-    margin: 0;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap');
+
+  @page { size: letter; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #1B2738;
-    background: #FCF6E6;
+    color: #022429;
+    background: #fdf6e4;
     -webkit-font-smoothing: antialiased;
+    font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
   }
   body {
     width: 8.5in;
     height: 11in;
     overflow: hidden;
-    padding: 0.5in 0.55in;
+    padding: 0.45in 0.5in 0.4in;
     display: flex;
     flex-direction: column;
   }
+
+  .display { font-family: 'Barlow Condensed', 'Impact', sans-serif; }
 
   /* ---------- LETTERHEAD ---------- */
   .letterhead {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 2px solid #1B2738;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #022429;
   }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .mark {
+    width: 56px; height: 56px;
+    position: relative;
   }
-  .bmark {
-    width: 54px;
-    height: 54px;
-    background: #F5B82E;
-    color: #1B2738;
-    font-weight: 900;
-    font-size: 38px;
-    line-height: 54px;
-    text-align: center;
-    border-radius: 6px;
-    letter-spacing: -1px;
-  }
+  .mark svg { width: 100%; height: 100%; display: block; }
   .brand-text .eyebrow {
-    font-size: 9px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 8.5px;
     font-weight: 700;
-    letter-spacing: 3px;
-    color: #1B2738;
-    opacity: 0.7;
+    letter-spacing: 3.5px;
+    color: #022429;
+    opacity: 0.65;
+    text-transform: uppercase;
   }
   .brand-text .name {
-    font-size: 22px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
     font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-top: 2px;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #022429;
   }
+  .brand-text .name em { font-style: normal; color: #022429; opacity: 0.55; font-weight: 600; }
+
   .address {
     text-align: right;
     font-size: 9.5px;
-    line-height: 1.5;
-    color: #1B2738;
+    line-height: 1.55;
+    color: #022429;
   }
-  .address strong {
+  .address .loc {
     display: block;
-    font-size: 10.5px;
-    letter-spacing: 1.5px;
-    margin-bottom: 3px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .address .url {
+    display: inline-block;
+    background: #fdb602;
+    color: #022429;
+    font-weight: 700;
+    padding: 2px 7px;
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 0.4px;
   }
 
   /* ---------- LEDE ---------- */
-  .lede {
-    margin-top: 18px;
-    font-size: 11px;
-    line-height: 1.6;
-    color: #1B2738;
+  .lede { margin-top: 16px; max-width: 7.4in; }
+  .h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    color: #022429;
+  }
+  .h1 .accent { color: #022429; background: #fdb602; padding: 0 6px; }
+  .lede p {
+    margin-top: 10px;
+    font-size: 10.5px;
+    line-height: 1.55;
+    color: #022429;
     max-width: 6.8in;
   }
-  .lede .h1 {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: -0.3px;
-    margin-bottom: 8px;
-    color: #1B2738;
-  }
-  .lede .h1 span { color: #F5B82E; }
+  .lede p .strong { font-weight: 700; }
 
-  /* ---------- CORE CAPABILITIES ---------- */
+  /* ---------- SECTION TITLES ---------- */
   .section-title {
-    font-size: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 18px 0 8px;
+  }
+  .section-title .kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
     font-weight: 800;
-    letter-spacing: 2.5px;
-    color: #1B2738;
-    margin: 20px 0 10px;
+    letter-spacing: 3.5px;
+    color: #022429;
     text-transform: uppercase;
   }
-  .cards {
-    display: flex;
-    gap: 10px;
+  .section-title .meta {
+    font-size: 9px;
+    color: #022429;
+    opacity: 0.6;
+    font-style: italic;
   }
+  .section-title::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 3px;
+    background: #fdb602;
+    margin-right: 2px;
+    transform: translateY(-3px);
+  }
+
+  /* ---------- CORE CAPABILITY CARDS ---------- */
+  .cards { display: flex; gap: 10px; }
   .card {
     flex: 1;
-    background: #FFFDF5;
-    border-left: 5px solid #F5B82E;
-    padding: 12px 13px 14px;
-    box-shadow: 0 1px 0 rgba(27,39,56,0.06);
+    background: #ffffff;
+    border-left: 6px solid #fdb602;
+    padding: 12px 13px 12px;
+    box-shadow: 0 1px 0 rgba(2,36,41,0.06);
+  }
+  .card .num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #022429;
+    opacity: 0.45;
   }
   .card h3 {
-    font-size: 12.5px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 19px;
     font-weight: 800;
-    margin-bottom: 6px;
-    color: #1B2738;
-    letter-spacing: -0.2px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: #022429;
+    letter-spacing: 0.2px;
   }
-  .card p {
-    font-size: 9.5px;
-    line-height: 1.5;
-    color: #1B2738;
-    margin-bottom: 6px;
-  }
-  .card ul {
-    list-style: none;
-    padding: 0;
-  }
-  .card ul li {
+  .card .tagline {
     font-size: 9px;
+    font-style: italic;
+    color: #022429;
+    opacity: 0.75;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .card ul { list-style: none; padding: 0; }
+  .card ul li {
+    font-size: 9.5px;
     line-height: 1.55;
-    padding-left: 10px;
+    padding-left: 12px;
     position: relative;
-    color: #1B2738;
+    color: #022429;
+    margin-bottom: 1px;
   }
   .card ul li::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 6px;
-    width: 4px;
-    height: 4px;
-    background: #F5B82E;
+    left: 0; top: 6px;
+    width: 5px; height: 5px;
+    background: #fdb602;
+  }
+  .card ul li b {
+    font-weight: 700;
+    color: #022429;
   }
 
   /* ---------- WAREHOUSING STRIP ---------- */
   .strip {
-    margin-top: 16px;
-    background: #FFFDF5;
-    border: 1px solid rgba(27,39,56,0.08);
-    border-left: 5px solid #1B2738;
+    margin-top: 14px;
+    background: #022429;
+    color: #fdf6e4;
     padding: 12px 14px;
     display: flex;
+    gap: 14px;
     align-items: center;
-    gap: 16px;
+    border-left: 6px solid #fdb602;
   }
-  .strip .strip-head {
-    min-width: 1.55in;
-  }
-  .strip .strip-head h3 {
-    font-size: 12px;
+  .strip .strip-head { min-width: 1.7in; }
+  .strip h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
     font-weight: 800;
-    color: #1B2738;
-    margin-bottom: 2px;
-    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fdf6e4;
+    letter-spacing: 0.2px;
   }
-  .strip .strip-head .sub {
+  .strip .sub {
     font-size: 8.5px;
-    color: #1B2738;
-    opacity: 0.7;
+    font-style: italic;
+    color: #c9b789;
+    margin-top: 3px;
     line-height: 1.4;
   }
-  .strip p.copy {
+  .strip .copy {
     flex: 1;
-    font-size: 9px;
-    line-height: 1.5;
-    color: #1B2738;
+    font-size: 9.5px;
+    line-height: 1.55;
+    color: #fdf6e4;
   }
-  .pills {
-    margin-top: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
+  .pills { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 5px; }
   .pill {
     display: inline-block;
+    font-family: 'Figtree', sans-serif;
     font-size: 8px;
     font-weight: 700;
-    letter-spacing: 0.8px;
-    color: #1B2738;
-    background: #F5B82E;
+    letter-spacing: 1px;
+    color: #022429;
+    background: #fdb602;
     padding: 3px 8px;
-    border-radius: 999px;
     text-transform: uppercase;
   }
   .pill.outline {
     background: transparent;
-    color: #1B2738;
-    border: 1px solid #1B2738;
+    color: #fdb602;
+    border: 1px solid #fdb602;
   }
 
-  /* ---------- META / CREDENTIALS ---------- */
-  .meta {
-    margin-top: 14px;
+  /* ---------- META ROW ---------- */
+  .meta-row {
+    margin-top: 12px;
     display: flex;
     gap: 10px;
   }
-  .meta .block {
+  .meta-row .block {
     flex: 1;
-    border-top: 2px solid #1B2738;
-    padding-top: 7px;
+    border-top: 2px solid #022429;
+    padding-top: 6px;
   }
-  .meta .label {
-    font-size: 8px;
+  .meta-row .label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
     opacity: 0.7;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
-  .meta .value {
+  .meta-row .value {
     font-size: 9.5px;
     line-height: 1.45;
-    color: #1B2738;
+    color: #022429;
   }
 
   /* ---------- CTA BAR ---------- */
   .cta {
     margin-top: auto;
-    background: #1B2738;
-    color: #FCF6E6;
+    background: #fdb602;
+    color: #022429;
     padding: 14px 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 6px solid #F5B82E;
+    position: relative;
   }
+  .cta::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 8px;
+    background: #022429;
+  }
+  .cta .left { padding-left: 6px; }
   .cta .left .kicker {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    color: #F5B82E;
-    margin-bottom: 3px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.85;
   }
   .cta .left .line {
-    font-size: 13px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
     font-weight: 800;
-    letter-spacing: -0.2px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-top: 2px;
+    letter-spacing: 0.2px;
   }
   .cta .right {
     text-align: right;
     font-size: 10px;
-    line-height: 1.5;
+    line-height: 1.4;
+    color: #022429;
   }
   .cta .right strong {
-    color: #F5B82E;
-    font-size: 11px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- FOOTER STRIPE ---------- */
+  .stamp {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.5px;
+    letter-spacing: 1.5px;
+    color: #022429;
+    opacity: 0.6;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 </style>
 </head>
@@ -264,119 +341,143 @@
 
   <header class="letterhead">
     <div class="brand">
-      <div class="bmark">B</div>
+      <div class="mark">
+        <!-- Beacon mark: yellow disc with triangular slice cut at upper-right (the "beam") -->
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Beacon mark">
+          <defs>
+            <clipPath id="slice">
+              <!-- triangular wedge from center pointing up-right, masking out a slice of the disc -->
+              <polygon points="32,32 64,0 64,32" />
+            </clipPath>
+          </defs>
+          <!-- Yellow disc -->
+          <circle cx="32" cy="32" r="32" fill="#fdb602"/>
+          <!-- Triangular cut showing the cream paper through -->
+          <circle cx="32" cy="32" r="32" fill="#fdf6e4" clip-path="url(#slice)"/>
+        </svg>
+      </div>
       <div class="brand-text">
-        <div class="eyebrow">CAPABILITIES STATEMENT</div>
-        <div class="name">Beacon Manufacturing</div>
+        <div class="eyebrow">Capabilities Statement · v2</div>
+        <div class="name">Beacon <em>Manufacturing</em></div>
       </div>
     </div>
     <div class="address">
-      <strong>DETROIT, MICHIGAN</strong>
-      2200 Beaufait Avenue<br>
-      Detroit, MI 48207<br>
-      hello@beaconmfg.com · (313) 555-0184<br>
-      beaconmfg.com
+      <span class="loc">Detroit · Michigan</span>
+      2050 15th St<br>
+      Detroit, MI 48216<br>
+      Local Mfg. · 100% Onshore<br>
+      <span class="url">beaconmfg.us</span>
     </div>
   </header>
 
   <section class="lede">
-    <div class="h1">Metal fabrication, assembly, and prototyping <span>—</span> made in Detroit.</div>
+    <div class="h1">Builder-led <span class="accent">contract&nbsp;manufacturing</span><br>made in Detroit.</div>
     <p>
-      Beacon Manufacturing is a Detroit-based contract manufacturer pairing decades of skilled-trade
-      craftsmanship with modern digital fabrication. From one-off prototypes to recurring production runs,
-      we cut, form, weld, finish, assemble, kit, and ship — all under one roof. Short lead times, tight
-      tolerances, and a single point of accountability for engineers, founders, and procurement teams.
+      <span class="strong">Beacon is a builder-led contract manufacturer in Detroit</span> delivering metal fabrication, assembly, and rapid prototyping — from one-off prototypes to repeatable short runs and full production.
+      <span class="strong">Bring us a problem.</span> We'll quote it, prototype it, and put it on a line.
     </p>
   </section>
 
-  <div class="section-title">Core Capabilities</div>
+  <div class="section-title">
+    <span class="kicker">Core Capabilities</span>
+    <span class="meta">Fabrication · Assembly · Prototyping</span>
+  </div>
 
   <section class="cards">
     <div class="card">
+      <div class="num">01 · FAB</div>
       <h3>Fabrication</h3>
-      <p>Precision sheet-metal and structural metalwork from raw stock to finished part.</p>
+      <div class="tagline">Cutting, forming, and welding for metal parts and structures.</div>
       <ul>
-        <li>Fiber laser cutting (up to 1/2")</li>
-        <li>CNC press brake forming</li>
-        <li>MIG / TIG / spot welding</li>
-        <li>Powder coat &amp; wet paint</li>
-        <li>Grinding, deburring, polishing</li>
+        <li><b>Laser cutting</b> — tube + flat</li>
+        <li><b>Forming</b> — brake press, tube bending, punch &amp; press</li>
+        <li><b>Welding</b> — MIG / TIG / laser + robotic</li>
+        <li><b>Short runs</b> — jigs &amp; fixtures for repeatability</li>
       </ul>
     </div>
     <div class="card">
+      <div class="num">02 · ASM</div>
       <h3>Assembly</h3>
-      <p>Sub-assembly and finished-goods build with mechanical, electrical, and pneumatic integration.</p>
+      <div class="tagline">Kitting, sub-assembly, full builds — and everything in between.</div>
       <ul>
-        <li>Mechanical &amp; fastener assembly</li>
-        <li>Electrical harness &amp; panel build</li>
-        <li>Pneumatic / hydraulic integration</li>
-        <li>Functional test &amp; QA</li>
-        <li>Kitting &amp; final packaging</li>
+        <li>Kitting + sub-assembly + final assembly</li>
+        <li>Complete build-ups with CAD / 3xD support</li>
+        <li>Torque &amp; fastener standards · EOL test</li>
+        <li>Quality checks + rework when needed</li>
       </ul>
     </div>
     <div class="card">
+      <div class="num">03 · PROTO</div>
       <h3>Prototyping &amp; DigiFab</h3>
-      <p>Rapid iteration with digital fabrication for fast turns on form, fit, and function.</p>
+      <div class="tagline">Fast prototypes and fixtures, CAD to part.</div>
       <ul>
-        <li>3D printing (FDM, SLA, SLS)</li>
-        <li>CNC routing &amp; milling</li>
-        <li>Laser engraving &amp; cutting</li>
-        <li>DFM review &amp; design support</li>
-        <li>Low-volume pilot runs</li>
+        <li><b>3D printing</b> — FDM, SLA, SLS (EOS)</li>
+        <li>Quick jigs, check-fixtures, POCs, mockups</li>
+        <li>Same-week iteration on form, fit, function</li>
+        <li>Design-for-manufacture review &amp; support</li>
       </ul>
     </div>
   </section>
 
-  <div class="section-title">Warehousing &amp; Logistics</div>
+  <div class="section-title">
+    <span class="kicker">Warehousing &amp; Logistics</span>
+    <span class="meta">Products in, products out — without the chaos.</span>
+  </div>
 
   <section class="strip">
     <div class="strip-head">
-      <h3>One roof, end to end.</h3>
-      <div class="sub">42,000 sq ft Detroit facility</div>
+      <h3>One roof.<br>End to end.</h3>
+      <div class="sub">Receiving · inventory · outbound.</div>
     </div>
     <div style="flex:1">
       <p class="copy">
-        On-site warehousing, inventory programs, and outbound logistics keep your supply chain tight.
-        We hold stock, manage Kanban replenishment, and ship direct to your line, your customer, or your DC.
+        Receiving, inventory, and part management with flexible storage on the floor.
+        Parcel and freight outbound — including no-box, roll-on / roll-off for awkward
+        builds. We keep your supply tight so the line never starves.
       </p>
       <div class="pills">
-        <span class="pill">Pick &amp; Pack</span>
-        <span class="pill">Kitting</span>
-        <span class="pill">Kanban</span>
-        <span class="pill">VMI</span>
-        <span class="pill">Inventory Mgmt</span>
-        <span class="pill outline">LTL / Parcel</span>
-        <span class="pill outline">Drop Ship</span>
-        <span class="pill outline">Cross-Dock</span>
+        <span class="pill">Receiving</span>
+        <span class="pill">Inventory</span>
+        <span class="pill">Part Mgmt</span>
+        <span class="pill">Flexible Storage</span>
+        <span class="pill outline">Parcel</span>
+        <span class="pill outline">Freight</span>
+        <span class="pill outline">Roll-on / Roll-off</span>
       </div>
     </div>
   </section>
 
-  <section class="meta">
+  <section class="meta-row">
     <div class="block">
-      <div class="label">INDUSTRIES</div>
-      <div class="value">Automotive · Mobility · Industrial OEM · Consumer hardware · Architectural · Defense</div>
+      <div class="label">Made For</div>
+      <div class="value">Hardware founders · Industrial OEMs · Mobility · Architectural · Defense &amp; gov · Consumer goods</div>
     </div>
     <div class="block">
-      <div class="label">CERTIFICATIONS</div>
-      <div class="value">ISO 9001:2015 · AWS D1.1 welders · ITAR registered · Detroit-based small business</div>
+      <div class="label">How We Work</div>
+      <div class="value">Send a print, a CAD file, or a napkin sketch. We quote, prototype, and put it on a line.</div>
     </div>
     <div class="block">
-      <div class="label">NAICS</div>
-      <div class="value">332710 · 332312 · 332999 · 333249 · 488991</div>
+      <div class="label">Ethos</div>
+      <div class="value">Local Mfg. · 100% Onshore American Industry · Builder-led · Detroit</div>
     </div>
   </section>
 
   <footer class="cta">
     <div class="left">
-      <div class="kicker">LET'S BUILD IT</div>
-      <div class="line">Send a print. Get a quote in 48 hours.</div>
+      <div class="kicker">Have a part, kit, or assembly in mind?</div>
+      <div class="line">Send a print. We'll put it on a line.</div>
     </div>
     <div class="right">
-      <strong>quotes@beaconmfg.com</strong><br>
-      (313) 555-0184 · beaconmfg.com
+      <strong>beaconmfg.us</strong><br>
+      2050 15th St · Detroit, MI 48216
     </div>
   </footer>
+
+  <div class="stamp">
+    <span>Beacon © 2026</span>
+    <span>Local Mfg. · 100% Onshore American Industry</span>
+    <span>Capabilities Statement · v2</span>
+  </div>
 
 </body>
 </html>
