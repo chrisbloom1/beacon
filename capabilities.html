@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Beacon Manufacturing — Capabilities Statement</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1B2738;
+    background: #FCF6E6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    width: 8.5in;
+    height: 11in;
+    overflow: hidden;
+    padding: 0.5in 0.55in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ---------- LETTERHEAD ---------- */
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #1B2738;
+    padding-bottom: 14px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .bmark {
+    width: 54px;
+    height: 54px;
+    background: #F5B82E;
+    color: #1B2738;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 54px;
+    text-align: center;
+    border-radius: 6px;
+    letter-spacing: -1px;
+  }
+  .brand-text .eyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #1B2738;
+    opacity: 0.7;
+  }
+  .brand-text .name {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-top: 2px;
+  }
+  .address {
+    text-align: right;
+    font-size: 9.5px;
+    line-height: 1.5;
+    color: #1B2738;
+  }
+  .address strong {
+    display: block;
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+    margin-bottom: 3px;
+  }
+
+  /* ---------- LEDE ---------- */
+  .lede {
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #1B2738;
+    max-width: 6.8in;
+  }
+  .lede .h1 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+    color: #1B2738;
+  }
+  .lede .h1 span { color: #F5B82E; }
+
+  /* ---------- CORE CAPABILITIES ---------- */
+  .section-title {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #1B2738;
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+  }
+  .cards {
+    display: flex;
+    gap: 10px;
+  }
+  .card {
+    flex: 1;
+    background: #FFFDF5;
+    border-left: 5px solid #F5B82E;
+    padding: 12px 13px 14px;
+    box-shadow: 0 1px 0 rgba(27,39,56,0.06);
+  }
+  .card h3 {
+    font-size: 12.5px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #1B2738;
+    letter-spacing: -0.2px;
+  }
+  .card p {
+    font-size: 9.5px;
+    line-height: 1.5;
+    color: #1B2738;
+    margin-bottom: 6px;
+  }
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .card ul li {
+    font-size: 9px;
+    line-height: 1.55;
+    padding-left: 10px;
+    position: relative;
+    color: #1B2738;
+  }
+  .card ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 4px;
+    height: 4px;
+    background: #F5B82E;
+  }
+
+  /* ---------- WAREHOUSING STRIP ---------- */
+  .strip {
+    margin-top: 16px;
+    background: #FFFDF5;
+    border: 1px solid rgba(27,39,56,0.08);
+    border-left: 5px solid #1B2738;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .strip .strip-head {
+    min-width: 1.55in;
+  }
+  .strip .strip-head h3 {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1B2738;
+    margin-bottom: 2px;
+    letter-spacing: -0.2px;
+  }
+  .strip .strip-head .sub {
+    font-size: 8.5px;
+    color: #1B2738;
+    opacity: 0.7;
+    line-height: 1.4;
+  }
+  .strip p.copy {
+    flex: 1;
+    font-size: 9px;
+    line-height: 1.5;
+    color: #1B2738;
+  }
+  .pills {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #1B2738;
+    background: #F5B82E;
+    padding: 3px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+  .pill.outline {
+    background: transparent;
+    color: #1B2738;
+    border: 1px solid #1B2738;
+  }
+
+  /* ---------- META / CREDENTIALS ---------- */
+  .meta {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+  }
+  .meta .block {
+    flex: 1;
+    border-top: 2px solid #1B2738;
+    padding-top: 7px;
+  }
+  .meta .label {
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 3px;
+  }
+  .meta .value {
+    font-size: 9.5px;
+    line-height: 1.45;
+    color: #1B2738;
+  }
+
+  /* ---------- CTA BAR ---------- */
+  .cta {
+    margin-top: auto;
+    background: #1B2738;
+    color: #FCF6E6;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 6px solid #F5B82E;
+  }
+  .cta .left .kicker {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #F5B82E;
+    margin-bottom: 3px;
+  }
+  .cta .left .line {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+  }
+  .cta .right {
+    text-align: right;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .cta .right strong {
+    color: #F5B82E;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+  <header class="letterhead">
+    <div class="brand">
+      <div class="bmark">B</div>
+      <div class="brand-text">
+        <div class="eyebrow">CAPABILITIES STATEMENT</div>
+        <div class="name">Beacon Manufacturing</div>
+      </div>
+    </div>
+    <div class="address">
+      <strong>DETROIT, MICHIGAN</strong>
+      2200 Beaufait Avenue<br>
+      Detroit, MI 48207<br>
+      hello@beaconmfg.com · (313) 555-0184<br>
+      beaconmfg.com
+    </div>
+  </header>
+
+  <section class="lede">
+    <div class="h1">Metal fabrication, assembly, and prototyping <span>—</span> made in Detroit.</div>
+    <p>
+      Beacon Manufacturing is a Detroit-based contract manufacturer pairing decades of skilled-trade
+      craftsmanship with modern digital fabrication. From one-off prototypes to recurring production runs,
+      we cut, form, weld, finish, assemble, kit, and ship — all under one roof. Short lead times, tight
+      tolerances, and a single point of accountability for engineers, founders, and procurement teams.
+    </p>
+  </section>
+
+  <div class="section-title">Core Capabilities</div>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Fabrication</h3>
+      <p>Precision sheet-metal and structural metalwork from raw stock to finished part.</p>
+      <ul>
+        <li>Fiber laser cutting (up to 1/2")</li>
+        <li>CNC press brake forming</li>
+        <li>MIG / TIG / spot welding</li>
+        <li>Powder coat &amp; wet paint</li>
+        <li>Grinding, deburring, polishing</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Assembly</h3>
+      <p>Sub-assembly and finished-goods build with mechanical, electrical, and pneumatic integration.</p>
+      <ul>
+        <li>Mechanical &amp; fastener assembly</li>
+        <li>Electrical harness &amp; panel build</li>
+        <li>Pneumatic / hydraulic integration</li>
+        <li>Functional test &amp; QA</li>
+        <li>Kitting &amp; final packaging</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Prototyping &amp; DigiFab</h3>
+      <p>Rapid iteration with digital fabrication for fast turns on form, fit, and function.</p>
+      <ul>
+        <li>3D printing (FDM, SLA, SLS)</li>
+        <li>CNC routing &amp; milling</li>
+        <li>Laser engraving &amp; cutting</li>
+        <li>DFM review &amp; design support</li>
+        <li>Low-volume pilot runs</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="section-title">Warehousing &amp; Logistics</div>
+
+  <section class="strip">
+    <div class="strip-head">
+      <h3>One roof, end to end.</h3>
+      <div class="sub">42,000 sq ft Detroit facility</div>
+    </div>
+    <div style="flex:1">
+      <p class="copy">
+        On-site warehousing, inventory programs, and outbound logistics keep your supply chain tight.
+        We hold stock, manage Kanban replenishment, and ship direct to your line, your customer, or your DC.
+      </p>
+      <div class="pills">
+        <span class="pill">Pick &amp; Pack</span>
+        <span class="pill">Kitting</span>
+        <span class="pill">Kanban</span>
+        <span class="pill">VMI</span>
+        <span class="pill">Inventory Mgmt</span>
+        <span class="pill outline">LTL / Parcel</span>
+        <span class="pill outline">Drop Ship</span>
+        <span class="pill outline">Cross-Dock</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="meta">
+    <div class="block">
+      <div class="label">INDUSTRIES</div>
+      <div class="value">Automotive · Mobility · Industrial OEM · Consumer hardware · Architectural · Defense</div>
+    </div>
+    <div class="block">
+      <div class="label">CERTIFICATIONS</div>
+      <div class="value">ISO 9001:2015 · AWS D1.1 welders · ITAR registered · Detroit-based small business</div>
+    </div>
+    <div class="block">
+      <div class="label">NAICS</div>
+      <div class="value">332710 · 332312 · 332999 · 333249 · 488991</div>
+    </div>
+  </section>
+
+  <footer class="cta">
+    <div class="left">
+      <div class="kicker">LET'S BUILD IT</div>
+      <div class="line">Send a print. Get a quote in 48 hours.</div>
+    </div>
+    <div class="right">
+      <strong>quotes@beaconmfg.com</strong><br>
+      (313) 555-0184 · beaconmfg.com
+    </div>
+  </footer>
+
+</body>
+</html>
