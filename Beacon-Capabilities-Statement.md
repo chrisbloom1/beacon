@@ -40,22 +40,23 @@ challenges.
 
 ---
 
-### Warehousing & Logistics
-*Products in, products out - without the chaos.*
+### Facilities & Logistics
+*Corktown, Detroit · 2 campuses · 200,000+ SF · steps from Michigan
+Central & Newlab*
+
+**One roof. End to end.** Spread across **2 campuses and 200,000+ SF**,
+Beacon offers plenty of space to scale — from **1,000 to 20,000 SF bays**.
+Both sites sit inside Detroit's **Corktown Aerial Mobility & Transportation
+Innovation Zone** — close to pilots, partners, and test corridors for
+drones, robotics, and mobility.
+
+**Warehousing & Logistics**
 
 - Receiving, inventory, and part management
 - Parcel + freight including no-box, roll-on / roll-off
-- Flexible storage
+- Flexible storage on the floor
 
----
-
-### Location
-*Corktown, Detroit · steps from Michigan Central & Newlab*
-
-**Spaces to scale — 2 campuses · 200,000+ SF.** Bays from **1,000 to
-20,000 SF**. Both sites sit inside Detroit's **Corktown Aerial Mobility &
-Transportation Innovation Zone** — close to pilots, partners, and test
-corridors. Drones · Robotics · Mobility. Manufacture, scale, test, deploy.
+*Manufacture · Scale · Test · Deploy.*
 
 ![Detroit Corktown map showing Beacon's 23rd Street Manufacturing Campus, Michigan Central, and Newlab](assets/beacon-location-map.png)
 

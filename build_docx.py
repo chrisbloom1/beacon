@@ -372,17 +372,19 @@ def main():
     pad2 = pcell.add_paragraph()
     tighten(pad2, after=4)
 
-    # ---- WAREHOUSING title
+    # ============= FACILITIES & LOGISTICS (merged) =============
     title2 = pcell.add_paragraph()
-    tighten(title2, before=8, after=2)
+    tighten(title2, before=10, after=2)
     add_run(title2, "▮▮ ", size=14, bold=True, color=YELLOW, font=BODY)
-    add_run(title2, "WAREHOUSING & LOGISTICS   ", size=15, bold=True,
+    add_run(title2, "FACILITIES & LOGISTICS   ", size=15, bold=True,
             color=TEAL, font=DISPLAY, letter_spacing=70)
-    add_run(title2, "Products in, products out — without the chaos.",
+    add_run(title2,
+            "Corktown, Detroit · 2 campuses · 200,000+ SF · "
+            "steps from Michigan Central & Newlab",
             size=9, italic=True, color=TEAL)
 
     rule2 = pcell.add_paragraph()
-    tighten(rule2, after=6)
+    tighten(rule2, after=5)
     pPr2 = rule2._element.get_or_add_pPr()
     pBdr2 = OxmlElement("w:pBdr")
     b2 = OxmlElement("w:bottom")
@@ -393,111 +395,34 @@ def main():
     pBdr2.append(b2)
     pPr2.append(pBdr2)
 
-    # ---- STRIP (dark teal, 2 cols)
-    strip = pcell.add_table(rows=1, cols=2)
-    strip.autofit = False
-    strip.columns[0].width = Inches(2.1)
-    strip.columns[1].width = Inches(5.2)
-    remove_table_borders(strip)
+    # 2-col table: map (~4.55in) + dark sidebar (~2.75in)
+    fac_tbl = pcell.add_table(rows=1, cols=2)
+    fac_tbl.autofit = False
+    fac_tbl.columns[0].width = Inches(4.55)
+    fac_tbl.columns[1].width = Inches(2.75)
+    remove_table_borders(fac_tbl)
 
-    sl = strip.cell(0, 0)
-    sr = strip.cell(0, 1)
-    sl.width = Inches(2.1)
-    sr.width = Inches(5.2)
-    set_cell_bg(sl, TEAL)
-    set_cell_bg(sr, TEAL)
-    set_cell_margins(sl, top=200, bottom=200, left=220, right=160)
-    set_cell_margins(sr, top=200, bottom=200, left=200, right=200)
-    set_cell_border(sl,
-        left={"val": "single", "sz": 48, "color": YELLOW},
-        top={"val": "nil"}, bottom={"val": "nil"}, right={"val": "nil"})
-    set_cell_border(sr,
-        left={"val": "single", "sz": 6, "color": YELLOW},
-        top={"val": "nil"}, bottom={"val": "nil"}, right={"val": "nil"})
-
-    slp = sl.paragraphs[0]
-    tighten(slp)
-    add_run(slp, "ONE ROOF.", size=18, bold=True, color=CREAM, font=DISPLAY)
-    slp2 = sl.add_paragraph()
-    tighten(slp2)
-    add_run(slp2, "END TO END.", size=18, bold=True, color=CREAM, font=DISPLAY)
-    slp3 = sl.add_paragraph()
-    tighten(slp3, before=4)
-    add_run(slp3, "Receiving · inventory · outbound.", size=8,
-            italic=True, color=SAND)
-
-    bullets = [
-        ("Receiving, inventory, and part management", ""),
-        ("Parcel + freight", " including no-box, roll-on / roll-off"),
-        ("Flexible storage", " on the floor"),
-    ]
-    first = True
-    for bold_part, rest in bullets:
-        if first:
-            ip = sr.paragraphs[0]
-            first = False
-        else:
-            ip = sr.add_paragraph()
-        tighten(ip, line=1.5)
-        ip.paragraph_format.left_indent = Inches(0.1)
-        add_run(ip, "■ ", size=9, bold=True, color=YELLOW, font=BODY)
-        add_run(ip, bold_part, size=10, bold=True, color=CREAM)
-        if rest:
-            add_run(ip, rest, size=10, color=CREAM)
-
-    # ============= LOCATION =============
-    sp_loc = pcell.add_paragraph()
-    tighten(sp_loc, before=6, after=2)
-
-    title_loc = pcell.add_paragraph()
-    tighten(title_loc, before=2, after=2)
-    add_run(title_loc, "▮▮ ", size=14, bold=True, color=YELLOW, font=BODY)
-    add_run(title_loc, "LOCATION   ", size=15, bold=True, color=TEAL,
-            font=DISPLAY, letter_spacing=70)
-    add_run(title_loc,
-            "Corktown, Detroit · steps from Michigan Central & Newlab",
-            size=9, italic=True, color=TEAL)
-
-    rule_loc = pcell.add_paragraph()
-    tighten(rule_loc, after=4)
-    pPr3 = rule_loc._element.get_or_add_pPr()
-    pBdr3 = OxmlElement("w:pBdr")
-    b3 = OxmlElement("w:bottom")
-    b3.set(qn("w:val"), "single")
-    b3.set(qn("w:sz"), "12")
-    b3.set(qn("w:space"), "1")
-    b3.set(qn("w:color"), TEAL)
-    pBdr3.append(b3)
-    pPr3.append(pBdr3)
-
-    # 2-col table: map (2/3 ~ 4.85in) + dark sidebar (1/3 ~ 2.45in)
-    loc_tbl = pcell.add_table(rows=1, cols=2)
-    loc_tbl.autofit = False
-    loc_tbl.columns[0].width = Inches(4.85)
-    loc_tbl.columns[1].width = Inches(2.45)
-    remove_table_borders(loc_tbl)
-
-    map_cell = loc_tbl.cell(0, 0)
-    map_cell.width = Inches(4.85)
-    set_cell_margins(map_cell, top=0, bottom=0, left=0, right=120)
+    map_cell = fac_tbl.cell(0, 0)
+    map_cell.width = Inches(4.55)
+    set_cell_margins(map_cell, top=0, bottom=0, left=0, right=160)
     map_cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
     mp_par = map_cell.paragraphs[0]
     tighten(mp_par)
     try:
         mp_par.add_run().add_picture("assets/beacon-location-map.png",
-                                      width=Inches(4.75))
+                                      width=Inches(4.4))
     except Exception:
         add_run(mp_par,
                 "Detroit · Corktown · 23rd Street Manufacturing Campus",
                 size=10, italic=True, color=TEAL)
 
     # Sidebar (dark teal w/ yellow accent)
-    side = loc_tbl.cell(0, 1)
-    side.width = Inches(2.45)
+    side = fac_tbl.cell(0, 1)
+    side.width = Inches(2.75)
     set_cell_bg(side, TEAL)
-    set_cell_margins(side, top=180, bottom=180, left=200, right=200)
+    set_cell_margins(side, top=200, bottom=200, left=220, right=220)
     set_cell_border(side,
-        left={"val": "single", "sz": 36, "color": YELLOW},
+        left={"val": "single", "sz": 40, "color": YELLOW},
         top={"val": "nil"}, bottom={"val": "nil"}, right={"val": "nil"})
 
     sp1 = side.paragraphs[0]
@@ -505,35 +430,72 @@ def main():
     add_run(sp1, "SPACES TO SCALE", size=10, bold=True, color=YELLOW,
             font=DISPLAY, letter_spacing=60)
     sp2 = side.add_paragraph()
-    tighten(sp2, before=2)
-    add_run(sp2, "2 CAMPUSES", size=16, bold=True, color=CREAM, font=DISPLAY)
+    tighten(sp2, before=3)
+    add_run(sp2, "ONE ROOF.", size=18, bold=True, color=CREAM, font=DISPLAY)
     sp3 = side.add_paragraph()
     tighten(sp3)
-    add_run(sp3, "200,000+ SF", size=16, bold=True, color=CREAM, font=DISPLAY)
+    add_run(sp3, "END TO END.", size=18, bold=True, color=CREAM, font=DISPLAY)
 
+    # Yellow stat chips
     sp_chip = side.add_paragraph()
-    tighten(sp_chip, before=4)
-    add_run(sp_chip, "  1,000 – 20,000 SF BAYS  ", size=8, bold=True,
+    tighten(sp_chip, before=6, line=1.5)
+    add_run(sp_chip, "  2 CAMPUSES  ", size=8, bold=True,
+            color=TEAL, font=DISPLAY, letter_spacing=30, shade=YELLOW)
+    add_run(sp_chip, "  ", size=8)
+    add_run(sp_chip, "  200,000+ SF  ", size=8, bold=True,
+            color=TEAL, font=DISPLAY, letter_spacing=30, shade=YELLOW)
+    sp_chip2 = side.add_paragraph()
+    tighten(sp_chip2, before=3)
+    add_run(sp_chip2, "  1,000 – 20,000 SF BAYS  ", size=8, bold=True,
             color=TEAL, font=DISPLAY, letter_spacing=30, shade=YELLOW)
 
     sp_body = side.add_paragraph()
-    tighten(sp_body, before=6, line=1.4)
-    add_run(sp_body,
-            "Both sites sit inside Detroit's ", size=8.5, color=CREAM)
+    tighten(sp_body, before=7, line=1.4)
+    add_run(sp_body, "Both sites sit inside Detroit's ",
+            size=8.5, color=CREAM)
     add_run(sp_body,
             "Corktown Aerial Mobility & Transportation Innovation Zone",
             size=8.5, bold=True, color=YELLOW)
     add_run(sp_body,
-            " — close to pilots, partners, and test corridors.",
+            " — close to pilots, partners, and test corridors for drones, "
+            "robotics, and mobility.",
             size=8.5, color=CREAM)
 
+    # Divider line (achieved via paragraph with bottom border)
+    sp_div = side.add_paragraph()
+    tighten(sp_div, before=8, after=5)
+    pPr_div = sp_div._element.get_or_add_pPr()
+    pBdr_div = OxmlElement("w:pBdr")
+    b_div = OxmlElement("w:bottom")
+    b_div.set(qn("w:val"), "single")
+    b_div.set(qn("w:sz"), "4")
+    b_div.set(qn("w:space"), "1")
+    b_div.set(qn("w:color"), YELLOW)
+    pBdr_div.append(b_div)
+    pPr_div.append(pBdr_div)
+
+    sp_wh = side.add_paragraph()
+    tighten(sp_wh)
+    add_run(sp_wh, "WAREHOUSING & LOGISTICS", size=9, bold=True,
+            color=YELLOW, font=DISPLAY, letter_spacing=50)
+
+    wh_bullets = [
+        ("Receiving, inventory, and part management", ""),
+        ("Parcel + freight", " including no-box, roll-on / roll-off"),
+        ("Flexible storage", " on the floor"),
+    ]
+    for bold_part, rest in wh_bullets:
+        ip = side.add_paragraph()
+        tighten(ip, line=1.4)
+        ip.paragraph_format.left_indent = Inches(0.08)
+        add_run(ip, "■ ", size=7.5, bold=True, color=YELLOW, font=BODY)
+        add_run(ip, bold_part, size=9, bold=True, color=CREAM)
+        if rest:
+            add_run(ip, rest, size=9, color=CREAM)
+
     sp_tag = side.add_paragraph()
-    tighten(sp_tag, before=6, line=1.2)
-    add_run(sp_tag, "DRONES · ROBOTICS · MOBILITY", size=9, bold=True,
-            color=SAND, font=DISPLAY, letter_spacing=40)
-    sp_tag2 = side.add_paragraph()
-    tighten(sp_tag2, line=1.2)
-    add_run(sp_tag2, "MANUFACTURE · SCALE · TEST · DEPLOY",
+    tighten(sp_tag, before=8, line=1.2)
+    add_run(sp_tag, "MANUFACTURE · SCALE · TEST · DEPLOY",
             size=9, bold=True, color=SAND, font=DISPLAY, letter_spacing=40)
 
     # ============= CTA (after paper inset) =============

@@ -99,7 +99,7 @@
   /* ===== PAPER BODY ===== */
   .paper {
     flex: 1;
-    padding: 16px 0.5in 0;
+    padding: 22px 0.5in 0;
     display: flex;
     flex-direction: column;
   }
@@ -108,7 +108,7 @@
   .lede { max-width: 7.4in; }
   .h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.3px;
@@ -117,9 +117,9 @@
   }
   .h1 .hl { background: #fdb602; padding: 0 7px; }
   .lede p {
-    margin-top: 8px;
-    font-size: 10.5px;
-    line-height: 1.5;
+    margin-top: 11px;
+    font-size: 11px;
+    line-height: 1.6;
     color: #022429;
     max-width: 6.9in;
   }
@@ -135,8 +135,8 @@
     display: flex;
     align-items: baseline;
     gap: 12px;
-    margin: 13px 0 6px;
-    padding-bottom: 3px;
+    margin: 18px 0 9px;
+    padding-bottom: 4px;
     border-bottom: 2px solid #022429;
   }
   .section-title .bar {
@@ -166,7 +166,7 @@
   .card {
     flex: 1;
     background: #ffffff;
-    padding: 11px 13px 11px;
+    padding: 14px 14px 14px;
     border-top: 4px solid #fdb602;
     position: relative;
   }
@@ -222,118 +222,60 @@
   }
   .card ul li b { font-weight: 800; }
 
-  /* ===== WAREHOUSING STRIP ===== */
-  .strip {
+  /* ===== FACILITIES (merged warehousing + location) ===== */
+  .facility {
     margin-top: 4px;
-    background: #022429;
-    color: #fdf6e4;
-    padding: 12px 18px;
     display: flex;
-    gap: 22px;
-    align-items: stretch;
-    position: relative;
-  }
-  .strip::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 8px;
-    background: #fdb602;
-  }
-  .strip-head { min-width: 2.0in; padding-left: 6px; }
-  .strip-head h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 26px;
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 1;
-    color: #fdf6e4;
-  }
-  .strip-head .sub {
-    margin-top: 6px;
-    font-size: 9px;
-    color: #c9b789;
-    line-height: 1.45;
-    font-style: italic;
-  }
-  .strip-body {
-    flex: 1;
-    border-left: 2px solid rgba(253,182,2,0.25);
-    padding-left: 18px;
-  }
-  .strip-body ul { list-style: none; padding: 0; }
-  .strip-body ul li {
-    font-size: 11px;
-    line-height: 1.5;
-    padding-left: 16px;
-    position: relative;
-    color: #fdf6e4;
-    margin-bottom: 4px;
-  }
-  .strip-body ul li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 7px;
-    width: 7px;
-    height: 7px;
-    background: #fdb602;
-  }
-  .strip-body ul li b { font-weight: 800; }
-
-  /* ===== LOCATION ===== */
-  .locale {
-    margin-top: 10px;
-    display: flex;
-    gap: 14px;
+    gap: 0;
     align-items: stretch;
   }
-  .locale .map {
-    flex: 2;
+  .facility .map {
+    flex: 1.65;
     background: #fdf6e4;
     overflow: hidden;
-    align-self: stretch;
     display: flex;
     align-items: center;
+    padding-right: 14px;
   }
-  .locale .map img {
+  .facility .map img {
     width: 100%;
     height: auto;
     display: block;
   }
-  .locale .copy {
+  .facility .copy {
     flex: 1;
     background: #022429;
     color: #fdf6e4;
-    padding: 11px 13px 12px;
-    border-left: 5px solid #fdb602;
+    padding: 14px 16px 14px;
+    border-left: 6px solid #fdb602;
     display: flex;
     flex-direction: column;
   }
-  .locale .copy .kicker {
+  .facility .copy .kicker {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
     letter-spacing: 3px;
     color: #fdb602;
     text-transform: uppercase;
   }
-  .locale .copy h3 {
+  .facility .copy h3 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 800;
-    line-height: 1;
+    line-height: 0.95;
     text-transform: uppercase;
     color: #fdf6e4;
-    margin-top: 3px;
+    margin-top: 4px;
+    letter-spacing: 0.3px;
   }
-  .locale .copy .stats {
-    margin-top: 6px;
+  .facility .copy .stats {
+    margin-top: 8px;
     display: flex;
-    gap: 6px;
+    gap: 5px;
     flex-wrap: wrap;
   }
-  .locale .copy .stat {
+  .facility .copy .stat {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 9px;
     font-weight: 800;
@@ -343,23 +285,54 @@
     padding: 2px 6px;
     text-transform: uppercase;
   }
-  .locale .copy p {
-    margin-top: 7px;
-    font-size: 8.5px;
-    line-height: 1.45;
+  .facility .copy p {
+    margin-top: 9px;
+    font-size: 9px;
+    line-height: 1.5;
     color: #fdf6e4;
   }
-  .locale .copy p b { font-weight: 800; color: #fdb602; }
-  .locale .copy p.tag {
-    margin-top: auto;
-    padding-top: 6px;
+  .facility .copy p b { font-weight: 800; color: #fdb602; }
+  .facility .copy .divider {
+    height: 1px;
+    background: rgba(253,182,2,0.3);
+    margin: 10px 0 8px;
+  }
+  .facility .copy .sub-kicker {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 9.5px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #fdb602;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .facility .copy ul { list-style: none; padding: 0; margin: 0; }
+  .facility .copy ul li {
+    font-size: 9px;
+    line-height: 1.45;
+    padding-left: 12px;
+    position: relative;
+    color: #fdf6e4;
+    margin-bottom: 2px;
+  }
+  .facility .copy ul li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 5px;
+    width: 5px; height: 5px;
+    background: #fdb602;
+  }
+  .facility .copy ul li b { font-weight: 800; }
+  .facility .copy .tag {
+    margin-top: auto;
+    padding-top: 9px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: 1.5px;
     color: #c9b789;
     text-transform: uppercase;
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
   /* ===== CTA ===== */
@@ -506,51 +479,39 @@
       </div>
     </section>
 
-    <!-- WAREHOUSING -->
+    <!-- FACILITIES & LOGISTICS -->
     <div class="section-title">
       <span class="bar"></span>
-      <span class="kicker">Warehousing &amp; Logistics</span>
-      <span class="sub">Products in, products out — without the chaos.</span>
+      <span class="kicker">Facilities &amp; Logistics</span>
+      <span class="sub">Corktown, Detroit · 2 campuses · 200,000+ SF · steps from Michigan Central &amp; Newlab</span>
     </div>
 
-    <section class="strip">
-      <div class="strip-head">
-        <h3>One roof.<br>End to end.</h3>
-        <div class="sub">Receiving · inventory · outbound.</div>
-      </div>
-      <div class="strip-body">
-        <ul>
-          <li><b>Receiving, inventory, and part management</b></li>
-          <li><b>Parcel + freight</b> including no-box, roll-on / roll-off</li>
-          <li><b>Flexible storage</b> on the floor</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- LOCATION -->
-    <div class="section-title">
-      <span class="bar"></span>
-      <span class="kicker">Location</span>
-      <span class="sub">Corktown, Detroit · steps from Michigan Central &amp; Newlab</span>
-    </div>
-
-    <section class="locale">
+    <section class="facility">
       <div class="map">
         <img alt="Detroit Corktown map showing Beacon's 23rd Street Manufacturing Campus, Michigan Central, and Newlab"
              src="assets/beacon-location-map.png">
       </div>
       <div class="copy">
         <div class="kicker">Spaces to scale</div>
-        <h3>2 campuses<br>200,000+ SF</h3>
+        <h3>One roof.<br>End to end.</h3>
         <div class="stats">
+          <span class="stat">2 Campuses</span>
+          <span class="stat">200,000+ SF</span>
           <span class="stat">1,000 – 20,000 SF bays</span>
         </div>
         <p>
           Both sites sit inside Detroit's <b>Corktown Aerial Mobility &amp;
           Transportation Innovation Zone</b> — close to pilots, partners, and
-          test corridors.
+          test corridors for drones, robotics, and mobility.
         </p>
-        <p class="tag">Drones · Robotics · Mobility<br>Manufacture · scale · test · deploy</p>
+        <div class="divider"></div>
+        <div class="sub-kicker">Warehousing &amp; Logistics</div>
+        <ul>
+          <li><b>Receiving, inventory, and part management</b></li>
+          <li><b>Parcel + freight</b> including no-box, roll-on / roll-off</li>
+          <li><b>Flexible storage</b> on the floor</li>
+        </ul>
+        <div class="tag">Manufacture · Scale · Test · Deploy</div>
       </div>
     </section>
 
